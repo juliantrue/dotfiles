@@ -1,4 +1,3 @@
-"
 "  Author: Julian True
 "  repo  : https://github.com/juliantrue/dotfiles/
 "
@@ -44,8 +43,7 @@
 " }}}
 " UI {{{
   call dein#add('scrooloose/nerdtree')
-  " call dein#add('Shougo/defx.nvim')
-  call dein#local('~/GitHub', {}, ['defx.nvim'])
+  call dein#add('Shougo/defx.nvim')
   call dein#add('kristijanhusak/defx-git')
   call dein#add('kristijanhusak/defx-icons')
   call dein#add('Yggdroot/indentLine')
@@ -72,12 +70,12 @@
   "       \ 'rev': 'next',
   "       \ 'build': 'bash install.sh',
   "       \ })
-  call dein#add('tweekmonster/deoplete-clang2')
-  call dein#add('Shougo/neco-vim')
-  call dein#add('Shougo/neoinclude.vim')
-  call dein#add('ujihisa/neco-look')
-  call dein#add('zchee/deoplete-jedi')
-  call dein#add('Shougo/echodoc.vim')
+"  call dein#add('tweekmonster/deoplete-clang2')
+"  call dein#add('Shougo/neco-vim')
+"  call dein#add('Shougo/neoinclude.vim')
+"  call dein#add('ujihisa/neco-look')
+"  call dein#add('zchee/deoplete-jedi')
+"  call dein#add('Shougo/echodoc.vim')
 " }}}
 " denite {{{
   call dein#add('Shougo/denite.nvim')
@@ -101,7 +99,6 @@
   call dein#add('airblade/vim-gitgutter')
   call dein#add('junegunn/gv.vim')
   call dein#add('lambdalisue/gina.vim')
-  call dein#add('AGhost-7/critiq.vim')
 " }}}}
 " python{{{
   call dein#add('numirias/semshi')
@@ -140,12 +137,8 @@
   call dein#add('Shougo/neosnippet-snippets')
   call dein#add('honza/vim-snippets')
 " }}}
-" local {{{
-  call dein#local('~/GitHub', {},['nvim-typescript'])
-  " call dein#add('autozimu/LanguageClient-neovim', {'rev': 'next', 'build': 'bash install.sh'})
-  " call dein#add('neoclide/coc.nvim', {'build': 'npm install'})
-  call dein#local('~/GitHub', {},['vim-folds', 'oceanic-next'])
-  call dein#local('~/GitHub', {}, ['nerdtree-git-plugin'])
+" colour scheme {{{
+  call dein#add('mhartington/oceanic-next')
 " }}}
 " Has to be last according to docs
   call dein#add('ryanoasis/vim-devicons')
@@ -161,7 +154,7 @@
 
 " System Settings  ----------------------------------------------------------{{{
 
-  source ~/.local.vim
+"  source ~/.local.vim
   if exists('g:GuiLoaded')
     Guifont Hasklig:h15
   endif
@@ -390,6 +383,14 @@ endif
   autocmd FileType css,scss,json setlocal foldmarker={,}
 
   autocmd FileType coffee setl foldmethod=indent
+
+  set foldmethod=indent
+  let g:SimpylFold_fold_import=0
+  let b:SimpylFold_fold_import=0
+  let g:SimpylFold_fold_docstring=0
+  let b:SimpylFold_fold_docstring=0
+  autocmd FileType python setlocal foldlevel=0
+
   let g:xml_syntax_folding = 1
   autocmd FileType xml setl foldmethod=syntax
 
@@ -576,9 +577,9 @@ endif
 " Deoplete ------------------------------------------------------------------{{{
 
 " enable deoplete
-  let g:deoplete#enable_at_startup = 1
+  let g:deoplete#enable_at_startup = 0
   let g:deoplete#auto_complete_delay = 0
-  let g:echodoc_enable_at_startup=1
+  let g:echodoc_enable_at_startup=0
   let g:echodoc#type="virtual"
   set splitbelow
   set completeopt+=menuone,noinsert,noselect
@@ -1063,51 +1064,3 @@ endif
 
 "}}}
 
-let g:tagbar_left=1
-let g:tagbar_type_typescript = {
-  \ 'ctagstype': 'typescript',
-  \ 'kinds': [
-    \ 'c:classes',
-    \ 'n:modules',
-    \ 'f:functions',
-    \ 'v:variables',
-    \ 'v:varlambdas',
-    \ 'm:members',
-    \ 'i:interfaces',
-    \ 'e:enums',
-  \ ],
-	\ 'sort' : 0
-\ }
-
-
-let g:tagbar_type_typescript.tsx = {
-  \ 'ctagstype': 'typescript.tsx',
-  \ 'kinds': [
-    \ 'c:classes',
-    \ 'n:modules',
-    \ 'f:functions',
-    \ 'v:variables',
-    \ 'v:varlambdas',
-    \ 'm:members',
-    \ 'i:interfaces',
-    \ 'e:enums',
-  \ ],
-	\ 'sort' : 0
-\ }
-" let g:tagbar_type_typescript = {
-"   \ 'ctagstype': 'typescript',
-"   \ 'kinds': [
-"     \ {'short' : 'e', 'long' : 'enums',      'fold' : 1, 'stl' : 0},
-"     \ {'short' : 'f', 'long' : 'function',  'fold' : 1, 'stl' : 0},
-"     \ {'short' : 't', 'long' : 'typealias',       'fold' : 0, 'stl' : 1},
-"     \ {'short' : 'M', 'long' : 'Module', 'fold' : 0, 'stl' : 0},
-"     \ {'short' : 'I', 'long' : 'import',    'fold' : 0, 'stl' : 0},
-"     \ {'short' : 'i', 'long' : 'interface',  'fold' : 0, 'stl' : 1},
-"     \ {'short' : 'C', 'long' : 'class',     'fold' : 0, 'stl' : 1},
-"     \ {'short' : 'm', 'long' : 'methods',     'fold' : 0, 'stl' : 1},
-"     \ {'short' : 'p', 'long' : 'property',      'fold' : 0, 'stl' : 1},
-"     \ {'short' : 'v', 'long' : 'variable',   'fold' : 0, 'stl' : 1},
-"     \ {'short' : 'c', 'long' : 'const',     'fold' : 0, 'stl' : 0},
-"     \ ]
-"   \ }
-"

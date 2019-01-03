@@ -1,4 +1,4 @@
-#!/usr/bin/env zsh
+#!/bin/sh
 
 # Some aliases for Homebrew
 alias bup='brew update && brew upgrade'

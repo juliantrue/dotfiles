@@ -16,7 +16,8 @@ packages=(
 "git"
 "tmux"
 "neovim"
-"zsh"
+"python"
+"python2"
 )
 
 for i in "${packages[@]}"
@@ -24,6 +25,10 @@ do
   brew install $i
   echo "---------------------------------------------------------"
 done
+
+echo "installing pynvim"
+pip2 install pynvim
+pip3 install pynvim
 
 echo "installing RCM, for dotfiles management"
 brew tap thoughtbot/formulae
@@ -58,14 +63,11 @@ rcup
 
 echo "---------------------------------------------------------"
 
-echo "Changing to zsh"
-chsh -s $(which zsh)
-
 echo "You'll need to log out for this to take effect"
 echo "---------------------------------------------------------"
 
 echo "running oxs defaults"
-~./osx.sh
+~/.osx.sh
 
 echo "---------------------------------------------------------"
 echo "All done!"
