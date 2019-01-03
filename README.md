@@ -5,3 +5,7 @@ Inspiration from Mike Hartington https://github.com/mhartington/dotfiles
 
 # Installation
 Run the `install.sh` script, sit back and relax.
+
+I use Iterm nightly for the true colour support. Go to preferences -> profiles -> colours and import `oceanic-next` from the `config` folder as well as the `source code pro` font package.
+
+After doing all of that, your terminal should look like mine.
