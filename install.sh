@@ -75,7 +75,7 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
   echo "---------------------------------------------------------"
 
 # Detect if OS is linux
-if [[ "$OSTYPE" == "linux-gnu" ]]; then
+elif [[ "$OSTYPE" == "linux-gnu" ]]; then
   echo "Linux-GNU detected, proceeding with Linux-GNU install.sh"
 
   packages=(
