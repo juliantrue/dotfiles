@@ -75,7 +75,7 @@ function ghUpdate() {
 # incase i forget how to clear
   alias c='clear'
   alias k='clear'
-  alias cls='clear'
+  alias clc='clear'
 
 # archive file or folder
   function compress()
@@ -224,3 +224,5 @@ function fixSSH(){
   eval $(ssh-agent);
   ssh-add ~/.ssh/id_rsa
 }
+
+alias proj_init=ml_proj_init.sh
