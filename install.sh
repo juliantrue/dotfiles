@@ -7,7 +7,7 @@ echo "Installing:"
 echo "    _____  _________  _          ______          _"
 echo "   |_   _||  _   _  || |       .' ____ \        / |_"
 echo "     | |  |_/ | | \_|\_|.--.   | (___ \_| .---.\`| |-'__   _  _ .--."
-echo " _   | |      | |      ( (\`\\]   _.____\`. / /__\\| | [  | | |[ '/'\`\ \\"
+echo " _   | |      | |      ( (\`\\]   _.____\`. / /__\\ | | [  | | |[ '/'\`\ \\"
 echo "| |__' |     _| |_      \`'.'.  | \____) || \__.,| |, | \_/ |,| \__/ |"
 echo "\`.____.'    |_____|    [\__) )  \______.' '.__.'\__/ '.__.'_/| ;.__/"
 echo "                                                             [__|"
@@ -80,7 +80,7 @@ elif [[ "$OSTYPE" == "linux-gnu" ]]; then
   if [ -z "${found}" ]; then
     # Install exa
     unzip $(wget https://github.com/ogham/exa/releases/download/v0.9.0/exa-linux-x86_64-0.9.0.zip)
-    mv exa-linux-x86_64-0.9.0 /usr/local/exa
+    mv exa-linux-x86_64-0.9.0 /usr/local/bin/exa
 
     wget -qO - https://apt.thoughtbot.com/thoughtbot.gpg.key | apt-key add -
 
@@ -91,7 +91,7 @@ elif [[ "$OSTYPE" == "linux-gnu" ]]; then
     wget https://github.com/ogham/exa/releases/download/v0.9.0/exa-linux-x86_64-0.9.0.zip
     unzip exa-linux-x86_64-0.9.0.zip
     rm exa-linux-x86_64-0.9.0.zip
-    mv exa-linux-x86_64 /usr/local/exa
+    mv exa-linux-x86_64 /usr/local/bin/exa
 
     wget -qO - https://apt.thoughtbot.com/thoughtbot.gpg.key | apt-key add -
   fi
@@ -107,7 +107,7 @@ fi
 # COMMON                                                                      #
 ###############################################################################
 echo "installing vim plug"
-curl -fLo ~/editor/config/nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+curl -fLo editor/config/nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 echo "---------------------------------------------------------"
 
 echo "installing pynvim"
@@ -115,10 +115,11 @@ pip3 install pynvim
 echo "---------------------------------------------------------"
 
 echo "---------------------------------------------------------"
-echo "Cloning dotfiles into .dotfiles"
-git clone https://github.com/juliantrue/dotfiles.git ~/.dotfiles
-cd ~/.dotfiles
-git submodule update --init --recursive
+echo "Soft linking directory to '.dotfiles'"
+CWD=`pwd`
+cd ..
+ln -s $CWD ~/.dotfiles
+cd $CWD
 
 # Soft link the rcrc config file so changes are reflected
 cp rcrc ~/.rcrc

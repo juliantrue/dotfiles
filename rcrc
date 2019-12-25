@@ -1,2 +1,2 @@
 EXCLUDES="README.md install.sh WISHLIST.md rcrc"
-DOTFILES_DIRS="~/.dotfiles/shell ~/.dotfiles/editor"
+DOTFILES_DIRS="~/.dotfiles/shell ~/.dotfiles/editor ~/.dotfiles/gui"

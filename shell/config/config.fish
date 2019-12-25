@@ -1,18 +1,19 @@
 # Some abreviations
-abbr -add clc 'clear'
-abbr -add v 'nvim'
-abbr -add please 'sudo'
-abbr -add dsclean 'find . -type f -name .DS_Store -print0 | xargs -0 rm'
+abbr --add clc 'clear'
+abbr --add v 'nvim'
+abbr --add please 'sudo'
+abbr --add dsclean 'find . -type f -name .DS_Store -print0 | xargs -0 rm'
 
 if command -v exa > /dev/null
-	abbr -add l 'exa'
-	abbr -add ls 'exa'
-	abbr -add ll 'exa -l'
+	abbr --add l 'exa'
+	abbr --add ls 'exa'
+	abbr --add ll 'exa -l'
 	abbr -add lll 'exa -la'
+
 else
-	abbr -add l 'ls'
-	abbr -add ll 'ls -l'
-	abbr -add lll 'ls -la'
+	abbr --add l 'ls'
+	abbr --add ll 'ls -l'
+	abbr --add lll 'ls -la'
 end
 
 set -U fish_user_paths /usr/local/sbin /usr/local/bin /usr/bin /bin
@@ -62,62 +63,62 @@ function compress
 	# $argv[0]: Directory or file to compress
 	# $argv[1] (optional): Compression type (Default tar.bz2)
 
-	dirPriorToExe=`pwd`
-	dirName=`dirname $argv[0]`
-	baseName=`basename $argv[0]`
-
-	if -e $argv[0] # Compress a file
-		echo "It was a file change directory to $dirName"
-		cd $dirName
-	 	switch $argv[1]
-			case tar.bz2
-				tar cjf $baseName.tar.bz2 $baseName
-			case tar.gz
-				tar czf $baseName.tar.gz $baseName
-			case gz
-				gzip $baseName
-			case tar
-				tar -cvvf $baseName.tar $baseName
-			case zip
-				zip -r $baseName.zip $baseName
-			case '*'
-				echo "Method not passed compressing using tar.bz2"
-				tar cjf $baseName.tar.bz2 $baseName
-		end
-
-		echo "Back to Directory $dirPriorToExe"
-		cd $dirPriorToExe
-
-	else
-		if -d $argv[0]
-			echo "It was a Directory change directory to $dirName"
-			cd $dirName
-			switch $argv[1]
-				case tar.bz2
-					tar cjf $baseName.tar.bz2 $baseName
-				case tar.gz
-					tar czf $baseName.tar.gz $baseName
-				case gz
-					gzip -r $baseName
-				case tar
-					tar -cvvf $baseName.tar $baseName
-				case zip
-					zip -r $baseName.zip $baseName
-				case '*'
-					echo "Method not passed compressing using tar.bz2"
-					tar cjf $baseName.tar.bz2 $baseName
-			end
-			echo "Back to Directory $dirPriorToExe"
-			cd $dirPriorToExe
-
-		else
-			echo "'$1' is not a valid file/folder"
-
-		end
-	end
-
-	echo "Done"
-	echo "###########################################"
+	# dirPriorToExe=`pwd`
+	# dirName=`dirname $argv[0]`
+	# baseName=`basename $argv[0]`
+	#
+	# if -e $argv[0] # Compress a file
+	# 	echo "It was a file change directory to $dirName"
+	# 	cd $dirName
+	#  	switch $argv[1]
+	# 		case tar.bz2
+	# 			tar cjf $baseName.tar.bz2 $baseName
+	# 		case tar.gz
+	# 			tar czf $baseName.tar.gz $baseName
+	# 		case gz
+	# 			gzip $baseName
+	# 		case tar
+	# 			tar -cvvf $baseName.tar $baseName
+	# 		case zip
+	# 			zip -r $baseName.zip $baseName
+	# 		case '*'
+	# 			echo "Method not passed compressing using tar.bz2"
+	# 			tar cjf $baseName.tar.bz2 $baseName
+	# 	end
+	#
+	# 	echo "Back to Directory $dirPriorToExe"
+	# 	cd $dirPriorToExe
+	#
+	# else
+	# 	if -d $argv[0]
+	# 		echo "It was a Directory change directory to $dirName"
+	# 		cd $dirName
+	# 		switch $argv[1]
+	# 			case tar.bz2
+	# 				tar cjf $baseName.tar.bz2 $baseName
+	# 			case tar.gz
+	# 				tar czf $baseName.tar.gz $baseName
+	# 			case gz
+	# 				gzip -r $baseName
+	# 			case tar
+	# 				tar -cvvf $baseName.tar $baseName
+	# 			case zip
+	# 				zip -r $baseName.zip $baseName
+	# 			case '*'
+	# 				echo "Method not passed compressing using tar.bz2"
+	# 				tar cjf $baseName.tar.bz2 $baseName
+	# 		end
+	# 		echo "Back to Directory $dirPriorToExe"
+	# 		cd $dirPriorToExe
+	#
+	# 	else
+	# 		echo "'$1' is not a valid file/folder"
+	#
+	# 	end
+	# end
+	#
+	# echo "Done"
+	# echo "###########################################"
 end
 
 function extract
