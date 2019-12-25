@@ -116,9 +116,9 @@ echo "---------------------------------------------------------"
 
 echo "---------------------------------------------------------"
 echo "Cloning dotfiles into .dotfiles"
-#git clone https://github.com/juliantrue/dotfiles.git ~/.dotfiles
-#cd ~/.dotfiles
-#  git submodule update --init --recursive
+git clone https://github.com/juliantrue/dotfiles.git ~/.dotfiles
+cd ~/.dotfiles
+git submodule update --init --recursive
 
 # Soft link the rcrc config file so changes are reflected
 cp rcrc ~/.rcrc
