@@ -1,0 +1,34 @@
+[user]
+	name = Julian True
+	email = julian.allan.true@gmail.com
+
+[ui "color"]
+	ui = always
+
+[color]
+	ui = true
+
+[core]
+	excludesfile = ~/.gitignore_global
+  # https://stackoverflow.com/questions/19978063/git-core-safecrlf-different-behavior-on-files-with-same-line-endings
+	autocrlf = input # Converts all CRLFs to LFs
+	safecrlf = true # Abort conversion if changing would damage file
+
+[merge]
+	tool = nvim -d
+
+[push]
+	default = simple
+
+[help]
+	autocorrect = 1
+
+[github]
+	user = juliantrue
+
+[diff]
+	algorithm = patience
+	compactionHeuristic = true
+
+[protocol]
+	version = 2

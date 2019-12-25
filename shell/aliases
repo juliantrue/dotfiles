@@ -1,14 +1,4 @@
-#!/bin/sh
-
-# Some aliases for Homebrew
-alias bup='brew update && brew upgrade'
-alias bout='brew outdated'
-alias bin='brew install'
-alias brm='brew uninstall'
-alias bls='brew list'
-alias bsr='brew search'
-alias binf='brew info'
-alias bdr='brew doctor'
+#!/bin/bash
 
 # Some directory listing with colors
 alias sl=ls
@@ -20,27 +10,32 @@ alias l1='ls -1'
 
 # because I'm to lazy to write vim
 alias v='nvim'
-# alias n="nvim"
-alias s="sudo"
-alias e="open -a /Applications/Emacs.app"
-alias n="open -a /Applications/Neovim.app"
-# Desktop Programs
-alias xcode="open -a '/Applications/XCode.app'"
-alias safari="open -a safari"
-alias chrome="open -a google\ chrome"
-alias chromium="open -a chromium"
-alias f='open -a Finder '
-alias fh='open -a Finder .'
-alias textedit='open -a TextEdit'
-alias hex='open -a "Hex Fiend"'
-alias skype='open -a Skype'
-alias slack="open -a '/Applications/Slack.app'"
 
-# Usefull stuff for presentation and seeing dotfiles
-alias hidedesktop="defaults write com.apple.finder CreateDesktop -bool false && killall Finder"
-alias showdesktop="defaults write com.apple.finder CreateDesktop -bool true && killall Finder"
-alias showall='defaults write com.apple.finder AppleShowAllFiles YES && killall Finder'
-alias hideall='defaults write com.apple.finder AppleShowAllFiles NO && killall Finder'
+# Random
+alias please="sudo"
+
+if [[ "$OSTYPE" == "darwin"* ]]; then
+
+  # Desktop Programs
+  alias xcode="open -a '/Applications/XCode.app'"
+  alias safari="open -a safari"
+  alias chrome="open -a google\ chrome"
+  alias chromium="open -a chromium"
+  alias f='open -a Finder '
+  alias fh='open -a Finder .'
+  alias textedit='open -a TextEdit'
+  alias hex='open -a "Hex Fiend"'
+  alias skype='open -a Skype'
+  alias slack="open -a '/Applications/Slack.app'"
+
+
+  # Usefull stuff for presentation and seeing dotfiles
+  alias hidedesktop="defaults write com.apple.finder CreateDesktop -bool false && killall Finder"
+  alias showdesktop="defaults write com.apple.finder CreateDesktop -bool true && killall Finder"
+  alias showall='defaults write com.apple.finder AppleShowAllFiles YES && killall Finder'
+  alias hideall='defaults write com.apple.finder AppleShowAllFiles NO && killall Finder'
+
+fi
 
 # Get rid of those pesky .DS_Store files recursively
 alias dsclean='find . -type f -name .DS_Store -print0 | xargs -0 rm'
@@ -61,12 +56,16 @@ alias dl=download
 function ghUpdate() {
   if git remote | grep upstream > /dev/null; then
     echo "upstream is set"
+
   elif ["$1" ]; then
     git remote add upstram $1
+
   else
     read "?Whats the URl of the original repo? | " answer
     git remote add upstream $answer
+
   fi
+
   git fetch upstream
   git checkout master
   git rebase upstream/master
