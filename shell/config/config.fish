@@ -8,7 +8,7 @@ if command -v exa > /dev/null
 	abbr --add l 'exa'
 	abbr --add ls 'exa'
 	abbr --add ll 'exa -l'
-	abbr -add lll 'exa -la'
+	abbr --add lll 'exa -la'
 
 else
 	abbr --add l 'ls'
