@@ -65,7 +65,7 @@ syntax on
 let g:one_allow_italics = 1
 let g:oceanic_next_terminal_bold = 1
 let g:oceanic_next_terminal_italic = 1
-"colorscheme OceanicNext
+colorscheme OceanicNext
 
 set mouse=a
 set guicursor=n-v-c-sm:block,i-ci-ve:ver25,r-cr-o:hor20
