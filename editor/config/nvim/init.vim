@@ -60,7 +60,7 @@ if (match($TERM, "-256color") != -1) && (match($TERM, "screen-256color") == -1)
   " screen does not (yet) support truecolor
   set termguicolors
 endif
-
+ 
 syntax on
 let g:one_allow_italics = 1
 let g:oceanic_next_terminal_bold = 1
