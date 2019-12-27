@@ -44,10 +44,6 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
     echo "---------------------------------------------------------"
   done
 
-  echo "Installing rust compiler."
-  curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh # Need Rust compiler
-  echo "---------------------------------------------------------"
-
 
   echo "installing RCM, for dotfiles management."
   brew tap thoughtbot/formulae
