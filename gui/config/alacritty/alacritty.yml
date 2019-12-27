@@ -60,7 +60,7 @@ window:
   #
   # Values for `startup_mode` (macOS only):
   #   - SimpleFullscreen
-  startup_mode: Windowed
+  startup_mode: Fullscreen
 
   # Window title
   #title: Alacritty
@@ -94,7 +94,7 @@ scrolling:
   # to allow mouse scrolling for applications like `man`.
   #
   # Specifying `0` will disable faux scrolling.
-  faux_multiplier: 0
+  # faux_multiplier: 0
 
   # Scroll to the bottom when new text is written to the terminal.
   auto_scroll: false
@@ -118,7 +118,7 @@ font:
     #   - (macOS) Menlo
     #   - (Linux) monospace
     #   - (Windows) Consolas
-    family: "Noto Sans Mono"
+    family: "monospace"
 
     # The `style` can be specified to pick a specific face.
     #style: Regular
@@ -175,7 +175,7 @@ font:
   #
   # This is a global setting and will require a log out or restart to take
   # effect.
-  use_thin_strokes: true
+  use_thin_strokes: false
 
 # If `true`, bold text is drawn using the bright color variants.
 draw_bold_text_with_bright_colors: true
@@ -291,7 +291,7 @@ live_config_reload: true
 #   - (Linux) user login shell
 #   - (Windows) powershell
 shell:
-   program: /bin/sh
+   program: /usr/bin/fish
 #   args:
 #     - --login
 

@@ -80,7 +80,7 @@ elif [[ "$OSTYPE" == "linux-gnu" ]]; then
   if [ -z "${found}" ]; then
     # Install exa
     unzip $(wget https://github.com/ogham/exa/releases/download/v0.9.0/exa-linux-x86_64-0.9.0.zip)
-    mv exa-linux-x86_64-0.9.0 /usr/local/bin/exa
+    mv exa-linux-x86_64 /usr/local/bin/exa
 
     wget -qO - https://apt.thoughtbot.com/thoughtbot.gpg.key | apt-key add -
 
@@ -121,7 +121,6 @@ cd ..
 ln -s $CWD ~/.dotfiles
 cd $CWD
 
-# Soft link the rcrc config file so changes are reflected
 cp rcrc ~/.rcrc
 cd $HOME
 

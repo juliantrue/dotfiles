@@ -1,3 +1,6 @@
+# Source cargo env
+source ~/.cargo/env
+
 # Some abreviations
 abbr --add clc 'clear'
 abbr --add v 'nvim'
@@ -9,6 +12,7 @@ if command -v exa > /dev/null
 	abbr --add ls 'exa'
 	abbr --add ll 'exa -l'
 	abbr --add lll 'exa -la'
+  abbr --add lt 'exa --tree --level=2'
 
 else
 	abbr --add l 'ls'
