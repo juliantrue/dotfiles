@@ -1,6 +1,3 @@
-# Source cargo env
-source ~/.cargo/env
-
 # Some abreviations
 abbr --add clc 'clear'
 abbr --add v 'nvim'
@@ -19,6 +16,9 @@ else
 	abbr --add ll 'ls -l'
 	abbr --add lll 'ls -la'
 end
+
+# Rust stuff
+source ~/.cargo/env
 
 set -U fish_user_paths /usr/local/sbin /usr/local/bin /usr/bin /bin
 

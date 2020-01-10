@@ -52,6 +52,7 @@ Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'} " Python
 Plug 'dag/vim-fish'
 Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
+Plug 'ekalinin/Dockerfile.vim'
 
 call plug#end()
 
