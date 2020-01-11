@@ -154,3 +154,13 @@ tnoremap <C-k> <Esc>
 " Ctrl+h to stop searching
 vnoremap <C-h> :nohlsearch<cr>
 nnoremap <C-h> :nohlsearch<cr>
+
+
+" =============================================================================
+" Plugin Settings
+" =============================================================================
+
+let g:black_linelength = 88 " PEP8 is great, but not as great as 88
+
+" Run Black on save
+autocmd BufWritePre *.py execute ':Black' 
