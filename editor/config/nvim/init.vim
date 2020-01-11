@@ -54,6 +54,9 @@ Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
 Plug 'ekalinin/Dockerfile.vim'
 
+" Python Black for code formatting
+Plug 'psf/black'
+
 call plug#end()
 
 " Colors are a pain
