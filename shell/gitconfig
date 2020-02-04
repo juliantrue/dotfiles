@@ -1,6 +1,6 @@
 [user]
 	name = Julian True
-	email = julian.allan.true@gmail.com
+  email = julian.allan.true@gmail.com
 
 [ui "color"]
 	ui = always
@@ -15,7 +15,10 @@
 	safecrlf = true # Abort conversion if changing would damage file
 
 [merge]
-	tool = nvim -d
+  tool = nvim -d
+
+[diff]
+  tool = nvim -d
 
 [push]
 	default = simple
@@ -30,5 +33,3 @@
 	algorithm = patience
 	compactionHeuristic = true
 
-[protocol]
-	version = 2
