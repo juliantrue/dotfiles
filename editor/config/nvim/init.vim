@@ -60,10 +60,10 @@ Plug 'psf/black'
 call plug#end()
 
 " Colors are a pain
-if (match($TERM, "-256color") != -1) && (match($TERM, "screen-256color") == -1)
+"if (match($TERM, "-256color") != -1) && (match($TERM, "screen-256color") == -1)
   " screen does not (yet) support truecolor
-  set termguicolors
-endif
+set termguicolors
+"endif
  
 syntax on
 let g:one_allow_italics = 1
