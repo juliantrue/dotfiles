@@ -165,3 +165,11 @@ let g:python3_host_prog = "/usr/bin/python3"
 
 " Run Black on save
 autocmd BufWritePre *.py execute ':Black' 
+
+" Coc Settings
+" Enter to select
+inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+
+" Enable <Tab> and <S-Tab> for moving around suggestions
+inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
