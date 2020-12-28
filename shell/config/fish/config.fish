@@ -17,6 +17,11 @@ else
 	abbr --add lll 'ls -la'
 end
 
+# AWS Stuff
+set ACCESS_KEY_ID "AKIASMUGLMJO3C5VJGLD"
+set SECRET_ACCESS_KEY "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"
+
+
 # Rust stuff
 source ~/.cargo/env
 

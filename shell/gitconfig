@@ -33,3 +33,5 @@
 	algorithm = patience
 	compactionHeuristic = true
 
+[diff "sopsdiffer"]
+	textconv = sops -d

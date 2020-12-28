@@ -65,7 +65,7 @@ call plug#end()
 set termguicolors
 "endif
  
-syntax on
+syntax enable
 let g:one_allow_italics = 1
 let g:oceanic_next_terminal_bold = 1
 let g:oceanic_next_terminal_italic = 1
@@ -161,6 +161,7 @@ nnoremap <C-h> :nohlsearch<cr>
 " =============================================================================
 
 let g:black_linelength = 88 " PEP8 is great, but not as great as 88
+let g:python3_host_prog = "/usr/bin/python3"
 
 " Run Black on save
 autocmd BufWritePre *.py execute ':Black' 
