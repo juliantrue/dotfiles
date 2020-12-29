@@ -17,9 +17,6 @@ else
 	abbr --add lll 'ls -la'
 end
 
-# AWS Stuff
-set ACCESS_KEY_ID "AKIASMUGLMJO3C5VJGLD"
-set SECRET_ACCESS_KEY "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"
 
 
 # Rust stuff
@@ -164,7 +161,7 @@ function fish_greeting
 	echo -e " \\e[1mDisk usage:\\e[0m"
 	echo
 	echo -ne (\
-		df -l -h | grep -E 'dev/(xvda|sd|mapper)' | \
+		df -l -h | grep -E 'dev/(nvme0n1p2|xvda|sd|mapper)' | \
 		awk '{printf "\\\\t%s\\\\t%4s / %4s  %s\\\\n\n", $6, $3, $2, $5}' | \
 		sed -e 's/^\(.*\([8][5-9]\|[9][0-9]\)%.*\)$/\\\\e[0;31m\1\\\\e[0m/' -e 's/^\(.*\([7][5-9]\|[8][0-4]\)%.*\)$/\\\\e[0;33m\1\\\\e[0m/' | \
 		paste -sd ''\
@@ -184,7 +181,7 @@ function fish_greeting
 				-e 's/\/.*//'| \
 			awk 'BEGIN {i=""} /\.|:/ {print i" "$0"\\\n"; next} // {i = $0}' | \
 			sort | \
-			column -t -R1 | \
+			column -t | \
 			# public addresses are underlined for visibility \
 			sed 's/ \([^ ]\+\)$/ \\\e[4m\1/' | \
 			# private addresses are not \
@@ -202,44 +199,6 @@ function fish_greeting
 		)
 	echo
 
-	set r (random 0 100)
-	if [ $r -lt 5 ] # only occasionally show backlog (5%)
-		echo -e " \e[1mBacklog\e[0;32m"
-		set_color blue
-		echo "  [project] <description>"
-		echo
-	end
 
-	set_color normal
-	echo -e " \e[1mTODOs\e[0;32m"
-	echo
-	if [ $r -lt 10 ]
-		# unimportant, so show rarely
-		set_color cyan
-		# echo "  [project] <description>"
-	end
-	if [ $r -lt 25 ]
-		# back-of-my-mind, so show occasionally
-		set_color green
-		# echo "  [project] <description>"
-	end
-	if [ $r -lt 50 ]
-		# upcoming, so prompt regularly
-		set_color yellow
-		# echo "  [project] <description>"
-	end
-
-	# urgent, so prompt always
-	set_color red
-	# echo "  [project] <description>"
-
-	echo
-
-	if test -s ~/todo
-		set_color magenta
-		cat todo | sed 's/^/ /'
-		echo
-	end
-
-	set_color normal
+  set_color normal
 end
