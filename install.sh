@@ -75,3 +75,6 @@ fi
 # Install the necessary deps for neovim
 python3 -m pip install pynvim
 
+# Symlink rcrc file and get the settings in place
+ln -s rcrc ~/.rcrc
+rcup
