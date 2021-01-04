@@ -17,15 +17,13 @@ else
 	abbr --add lll 'ls -la'
 end
 
-
-
 # Rust stuff
 source ~/.cargo/env
 
 # SSH
 set -x SSH_AUTH_SOCK (gpgconf --list-dirs agent-ssh-socket)
 
-set -U fish_user_paths /usr/local/sbin /usr/local/bin /usr/bin /bin
+set -U fish_user_paths /usr/local/sbin /usr/local/bin /usr/local/go/bin /usr/bin /bin
 
 # Fish git prompt
 set __fish_git_prompt_showuntrackedfiles 'yes'
