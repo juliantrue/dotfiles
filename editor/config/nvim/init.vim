@@ -95,6 +95,9 @@ set tabstop=2 shiftwidth=2 expandtab
 " System mappings
 " =============================================================================
 
+" Stop nvim from overwriting my damn clipboard everytime I delete something
+xnoremap c "_d
+
 " No need for ex mode
 nnoremap Q <nop>
 vnoremap // y/<C-R>"<CR>
