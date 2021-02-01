@@ -62,7 +62,6 @@ Plug 'rust-lang/rust.vim'
 Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'} " Python
 Plug 'dag/vim-fish'
 Plug 'godlygeek/tabular'
-Plug 'plasticboy/vim-markdown'
 Plug 'ekalinin/Dockerfile.vim'
 
 " Python Black for code formatting
