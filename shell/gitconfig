@@ -13,6 +13,7 @@
   # https://stackoverflow.com/questions/19978063/git-core-safecrlf-different-behavior-on-files-with-same-line-endings
 	autocrlf = input # Converts all CRLFs to LFs
 	safecrlf = true # Abort conversion if changing would damage file
+	editor = nvim
 
 [merge]
   tool = nvim -d
