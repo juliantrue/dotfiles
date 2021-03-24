@@ -65,7 +65,7 @@ Plug 'godlygeek/tabular'
 Plug 'ekalinin/Dockerfile.vim'
 
 " Python Black for code formatting
-Plug 'psf/black'
+" Plug 'psf/black' " Removed bc auto formatting got annoying
 
 call plug#end()
 
