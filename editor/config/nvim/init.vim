@@ -173,11 +173,11 @@ nnoremap <C-h> :nohlsearch<cr>
 " Plugin Settings
 " =============================================================================
 
-let g:black_linelength = 88 " PEP8 is great, but not as great as 88
-let g:python3_host_prog = "/usr/bin/python3"
-
-" Run Black on save
-autocmd BufWritePre *.py execute ':Black' 
+"let g:black_linelength = 88 " PEP8 is great, but not as great as 88
+"let g:python3_host_prog = "/usr/bin/python3"
+"
+"" Run Black on save
+"autocmd BufWritePre *.py execute ':Black' 
 
 " Coc Settings
 " Enter to select
