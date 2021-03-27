@@ -65,7 +65,7 @@ Plug 'godlygeek/tabular'
 Plug 'ekalinin/Dockerfile.vim'
 
 " Python Black for code formatting
-" Plug 'psf/black' " Removed bc auto formatting got annoying
+Plug 'psf/black'
 
 call plug#end()
 
@@ -173,11 +173,11 @@ nnoremap <C-h> :nohlsearch<cr>
 " Plugin Settings
 " =============================================================================
 
-"let g:black_linelength = 88 " PEP8 is great, but not as great as 88
-"let g:python3_host_prog = "/usr/bin/python3"
+let g:black_linelength = 88 " PEP8 is great, but not as great as 88
+let g:python3_host_prog = "/usr/bin/python3"
 "
 "" Run Black on save
-"autocmd BufWritePre *.py execute ':Black' 
+autocmd BufWritePre *.py execute ':Black' 
 
 " Coc Settings
 " Enter to select
