@@ -1,0 +1,79 @@
+{
+    "workbench.colorTheme": "Solarized Dark",
+    "workbench.startupEditor": "none",
+
+    "explorer.confirmDelete": false,
+
+    "editor.minimap.enabled": false,
+    "editor.cursorBlinking": "solid",
+
+    // Vim Settings and Key Bindings
+    "vim.useSystemClipboard": true,
+    "vim.normalModeKeyBindingsNonRecursive": [
+        {
+            "before": ["<C-j>"],
+            "after": ["<Esc>"]
+        },
+        {
+            "before": [";"],
+            "after": [":"]
+        },
+        {
+            "before": ["H"],
+            "after": ["^"]
+        },
+        {
+            "before": ["L"],
+            "after": ["g", "_"]
+        },
+        {
+            "before": ["J"],
+            "after": ["5", "j"]
+        },
+        {
+            "before": ["K"],
+            "after": ["5", "k"]
+        },
+        {
+            "before": ["<C-h>"],
+            "after": [":nohlsearch"]
+        },
+        {
+            "before": ["<leader>", "|"],
+            "after": [":nohlsearch"]
+        },
+
+    ],
+    "vim.insertModeKeyBindingsNonRecursive": [
+        {
+            "before": ["<C-j>"],
+            "after": ["<Esc>"]
+        },
+    ],
+    "vim.visualModeKeyBindingsNonRecursive": [
+        {
+            "before": ["<C-j>"],
+            "after": ["<Esc>"]
+        },
+        {
+            "before": ["H"],
+            "after": ["^"]
+        },
+        {
+            "before": ["L"],
+            "after": ["g", "_"]
+        },
+        {
+            "before": ["J"],
+            "after": ["5", "j"]
+        },
+        {
+            "before": ["K"],
+            "after": ["5", "k"]
+        },
+        {
+            "before": ["<C-h>"],
+            "after": [":nohlsearch"]
+        },
+    ]
+}
